@@ -1,0 +1,142 @@
+<!--
+    THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/zh/editor.html?c=bar-y-category-stack
+-->
+<!DOCTYPE html>
+<html style="height: 100%">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body style="height: 100%; margin: 0;">
+        <div id="container" style="height: 100%;width: 760px;"></div>
+
+        
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script>
+
+        <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+
+var option;
+
+
+
+option = {
+  title: {
+    text: '冬奥及重点冰雪项目搜索年龄关注度',
+    textStyle:{
+      color:'#fff',
+    },
+    x: 'center'
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      // Use axis to trigger tooltip
+      type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
+    }
+  },
+  legend: { y:'20px', top:30,   textStyle:{
+      color:'#fff',
+      
+    },},
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true,
+
+  },
+  xAxis: {
+    type: 'value',
+    max:100,
+    axisLabel: {
+      show: true,
+      textStyle: {
+          color: '#fff'
+      }
+  }
+},
+  yAxis: {
+    axisLabel: {
+      show: true,
+      textStyle: {
+          color: '#fff'
+      }},
+    type: 'category',
+    data: ['花样滑冰', '短道速滑', '冰球', '冰壶', '雪车']
+  },
+  series: [
+    {
+      name: '<=19岁',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: false
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [13.34, 15.99, 14.86,9.48, 17.23]
+    },
+    {
+      name: '20~29岁',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: false
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [19.97, 29.19, 28.89, 22.8, 22.5]
+    },
+    {
+      name: '30~39岁',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: false
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [41.09,  36.68, 37.33,37.94, 39.58]
+    },
+    {
+      name: '40~49岁',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: false
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [19.11,  14.59,14.01, 17.79, 17.29]
+    },
+    {
+      name: '>=50岁',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: false
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [6.5, 3.56,4.91,  11.99, 3.41]
+    }
+  ]
+};
+
+option && myChart.setOption(option);
+
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
+}
+
+        </script>
+    </body>
+</html>
+    

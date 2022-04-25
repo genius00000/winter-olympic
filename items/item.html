@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冬奥会项目概览</title>
+    <!--字体链接-->
+    <link href='http://cdn.repository.webfont.com/webfonts/nomal/148321/45803/623c1c97f629d80e38547625.css' rel='stylesheet' type='text/css' />
+    <link rel='stylesheet' type='text/css' href="../css/dataStyle.css" />
+    <script src="https://cdn.jsdelivr.net/npm/echarts@4.8.0/dist/echarts.min.js"></script>
+    <style>
+        body{
+            background:url("./image/snowground.jpg") no-repeat top center;
+            background-size: cover ;
+            background-attachment: fixed;
+        }
+        .chart{
+            width: 49%;
+            height:680px;
+            /* border: 1px solid #000 ; */
+            display: inline-block;
+        }
+        .breif{
+            width: 50%;
+            height:680px;
+            /* border: 1px solid #000 ; */
+            display: inline-block;
+            background-color: rgb(255, 255, 255);
+            opacity: 80%;
+            border-radius: 7px;
+            margin-top: 10px;
+            vertical-align:top;
+            /* padding-left: 20px; */
+        }
+        .format{
+            margin: 20px;
+        }
+        .format h1{
+            font-size: 24px;
+            color: rgb(18, 18, 137);
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 900;
+            }
+        .format h2{
+            font-size: 18px;
+            font-weight: 500;
+        }
+        #item {
+            width: 57%;
+        }
+        #actor{
+            width: 52%;
+        }
+        #photo{
+            width: 310px;
+            height: 375px;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            opacity: 100%;
+            margin: 10px;
+            image-rendering: auto;
+            image-rendering: crisp-edges;
+            image-rendering: pixelated;
+        }
+        #winner{
+            color: rgb(245, 217, 61);
+            font-size: 18px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body background="../../1171374464/">
+    <div class="daohang">
+        <ul>
+            <li><a href="../首页/index.html">首页</a></li>
+            <li><a href="../items/item.html">项目展览馆</a></li>
+            <li>
+                <a>数据统计馆</a>
+                    <ul class="nav1">
+                        <li style="padding-top:5px;"><a href="../大屏/analysis.html">热点概览</a></li>
+                        <li style="padding-top:5px;"><a href="../totalWorldData/totalWorldData.html">世界概览</a></li>
+                        <li style="padding-top:5px;"><a href="../timeData/worldMap.html">地图时间轴</a></li>
+                        <li style="padding-top:5px;"><a href="../totalChinaData/totalChinaData.html">中国概览</a></li>
+                    </ul>
+            </li>
+            <li>
+                <a>冬奥文化馆</a>
+                <ul class="nav2">
+                    <li style="padding-top:5px;"><a href="../WorldCulture/extrance.html">世界文化馆</a></li>
+                    <li style="padding-top:5px;"><a href="../ChinaCulture/chinaCulture1.html">中国文化馆</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <h1 style="font-family:'LiDeBiao-Xing32e5ff8f60324361';font-size: 2.5em;color:white;padding-left: 1rem;padding-top: 0.25rem;">
+        冬奥会展览馆    
+    </h1>
+
+    <div class="chart" id="main"></div>
+    <div class="breif">
+        <div class="format">
+            <h1 id="text1">2022年北京冬奥会项目简介</h1>
+            <h2 id="intro">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2022年北京冬奥会共设有7个大项、15个分项、109个小项，场馆分布在北京赛区、延庆赛区和张家口赛区。7个大项分别为滑冰、滑雪、冰壶、冰球、雪橇、雪车和冬季两项。本届冬奥会新增7个项目，分别是女子单人雪地摩托、短道速滑混合团体接力、跳台滑雪混合团体、自由式滑雪大跳台、自由式滑雪空中技巧混合团体和单板障碍追逐混合团体。</h2>
+        </div>
+        <div class="format">
+            <h1 id="text2">冬奥会项目原理</h1>
+            <h2 id="history">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;冬奥会项目是由大项（Sport）、分项（Discipline）和小项（Event）组成。
+                            一个大项（Sport）对应一个国际联合会（IF） 。
+                            一个大项包含一个或多个分项；一个分项（Discipline）包含一个或多个小项。
+                            一个小项（Event）对应一块金牌。</h2>
+        </div>
+        <img id="photo"src="./image/dundun.png">
+        <div class="format">
+            <h1 id="text3">冬奥会项目历史</h1>
+            <h2 id="item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2002年盐湖城冬奥会，冬奥会7个大项15个分项的新格局正式确立。21世纪冬奥会大项和分项得以固定，但小项仍然在不断发生变化：2014年索契冬奥会国际奥委会增加了12个小项，使竞赛项目达到了98项。2018年平昌冬奥会冬奥小项增至102项，首次突破100大关。2022年北京冬奥会将新增7个小项，分别为女子单人雪车、短道速滑混合接力、跳台滑雪混合团体、自由式滑雪男子大跳台、自由式滑雪女子大跳台、自由式滑雪空中技巧混合团体、单板滑雪障碍追逐混合团体，届时总共将进行109个小项的比赛，金牌总数增至109枚。</h2>
+        </div>
+        <div class="format">
+            <h1 id="text4"></h1>
+            <h2 id="actor"></h2>
+        </div>
+        <div class="format">
+            <a href="" target="_blank" id="winner"></a>
+        </div>
+    </div>
+
+<script>
+    var img=document.getElementById("photo");
+    var a=document.getElementById("winner");
+    var myChart = echarts.init(document.getElementById('main'),null,);
+    var data = [
+    {
+        name: '滑雪',
+        itemStyle: {
+        color: '#da1d23',
+        },
+        children: [
+        {
+            name: '高山滑雪',
+            itemStyle: {
+            color: '#dd4c51'
+            },
+            children: [
+            {
+                name: '男子滑降',
+                value: 1,
+                itemStyle: {
+                color: '#3e0317'
+                }
+            },
+            {
+                name: '男子超级大回转',
+                value: 1,
+                itemStyle: {
+                color: '#e62969'
+                }
+            },
+            {
+                name: '男子大回转',
+                value: 1,
+                itemStyle: {
+                color: '#6569b0'
+                }
+            },
+            {
+                name: '男子回转',
+                value: 1,
+                itemStyle: {
+                color: '#ef2d36'
+                }
+            },
+            {
+                name: '男子全能',
+                value: 1,
+                itemStyle: {
+                color: '#3e0317'
+                }
+            },
+            {
+                name: '女子滑降',
+                value: 1,
+                itemStyle: {
+                color: '#e62969'
+                }
+            },
+            {
+                name: '女子超级大回转',
+                value: 1,
+                itemStyle: {
+                color: '#6569b0'
+                }
+            },
+            {
+                name: '女子大回转',
+                value: 1,
+                itemStyle: {
+                color: '#ef2d36'
+                }
+            },
+            {
+                name: '女子回转',
+                value: 1,
+                itemStyle: {
+                color: '#3e0317'
+                }
+            },
+            {
+                name: '女子全能',
+                value: 1,
+                itemStyle: {
+                color: '#e62969'
+                }
+            },
+            {
+                name: '混合团体赛',
+                value: 1,
+                itemStyle: {
+                color: '#6569b0'
+                }
+            }
+            ]
+        },
+        {
+            name: '自由式滑雪',
+            itemStyle: {
+            color: '#c94a44'
+            },
+            children: [
+            {
+                name: '男子空中技巧',
+                value: 1,
+                itemStyle: {
+                color: '#b53b54'
+                }
+            },
+            {
+                name: '男子雪上技巧',
+                value: 1,
+                itemStyle: {
+                color: '#a5446f'
+                }
+            },
+            {
+                name: '男子障碍追逐',
+                value: 1,
+                itemStyle: {
+                color: '#b53b54'
+                }
+            },
+            {
+                name: '男子U型场地技巧',
+                value: 1,
+                itemStyle: {
+                color: '#a5446f'
+                }
+            },
+            {
+                name: '男子坡面障碍技巧',
+                value: 1,
+                itemStyle: {
+                color: '#b53b54'
+                }
+            },
+            {
+                name: '男子大跳台',
+                value: 1,
+                itemStyle: {
+                color: '#a5446f'
+                }
+            },
+            {
+                name: '女子空中技巧',
+                value: 1,
+                itemStyle: {
+                color: '#b53b54'
+                }
+            },
+            {
+                name: '女子雪上技巧',
+                value: 1,
+                itemStyle: {
+                color: '#a5446f'
+                }
+            },
+            {
+                name: '女子障碍追逐',
+                value: 1,
+                itemStyle: {
+                color: '#b53b54'
+                }
+            },
+            {
+                name: '女子U型场地技巧',
+                value: 1,
+                itemStyle: {
+                color: '#a5446f'
+                }
+            },
+            {
+                name: '女子坡面障碍技巧',
+                value: 1,
+                itemStyle: {
+                color: '#b53b54'
+                }
+            },
+            {
+                name: '女子大跳台',
+                value: 1,
+                itemStyle: {
+                color: '#a5446f'
+                }
+            },
+            {
+                name: '空中技巧混合团体',
+                value: 1,
+                itemStyle: {
+                color: '#b53b54'
+                }
+            }
+            ]
+        },
+        {
+            name: '单板滑雪',
+            itemStyle: {
+            color: '#dd4c51'
+            },
+            children: [
+            {
+                name: '男子平行大回转',
+                value: 1,
+                itemStyle: {
+                color: '#f2684b'
+                }
+            },
+            {
+                name: '男子障碍追逐',
+                value: 1,
+                itemStyle: {
+                color: '#e73451'
+                }
+            },
+            {
+                name: '男子U型场地技巧',
+                value: 1,
+                itemStyle: {
+                color: '#e65656'
+                }
+            },
+            {
+                name: '男子坡面障碍技巧',
+                value: 1,
+                itemStyle: {
+                color: '#f89a1c'
+                }
+            },
+            {
+                name: '男子大跳台',
+                value: 1,
+                itemStyle: {
+                color: '#aeb92c'
+                }
+            },
+            {
+                name: '女子平行大回转',
+                value: 1,
+                itemStyle: {
+                color: '#4eb849'
+                }
+            },
+            {
+                name: '女子障碍追逐',
+                value: 1,
+                itemStyle: {
+                color: '#f68a5c'
+                }
+            },
+            {
+                name: '女子U型场地技巧',
+                value: 1,
+                itemStyle: {
+                color: '#baa635'
+                }
+            },
+            {
+                name: '女子坡面障碍技巧',
+                value: 1,
+                itemStyle: {
+                color: '#e73451'
+                }
+            },
+            {
+                name: '女子大跳台',
+                value: 1,
+                itemStyle: {
+                color: '#e65656'
+                }
+            },
+            {
+                name: '障碍追逐混合团体',
+                value: 1,
+                itemStyle: {
+                color: '#f89a1c'
+                }
+            }
+            ]
+        },
+        {
+            name: '跳台滑雪',
+            itemStyle: {
+            color: '#f7a128'
+            },
+            children: [
+            {
+                name: '男子个人标准台',
+                value: 1,
+                itemStyle: {
+                color: '#f26355'
+                }
+            },
+            {
+                name: '男子个人大跳台',
+                value: 1,
+                itemStyle: {
+                color: '#e2631e'
+                }
+            },
+            {
+                name: '男子团体',
+                value: 1,
+                itemStyle: {
+                color: '#fde404'
+                }
+            },
+            {
+                name: '女子个人标准台',
+                value: 1,
+                itemStyle: {
+                color: '#7eb138'
+                }
+            },
+            {
+                name: '混合团体',
+                value: 1,
+                itemStyle: {
+                color: '#e2631e'
+                }
+            }
+            ]
+        },
+        {
+            name: '越野滑雪',
+            itemStyle: {
+            color: '#f7bb28'
+            },
+            children: [
+            {
+                name: '男子双追逐',
+                value: 1,
+                itemStyle: {
+                color: '#3e0317'
+                }
+            },
+            {
+                name: '男子个人短距离',
+                value: 1,
+                itemStyle: {
+                color: '#e62969'
+                }
+            },
+            {
+                name: '男子15公里',
+                value: 1,
+                itemStyle: {
+                color: '#6569b0'
+                }
+            },
+            {
+                name: '男子4×10公里接力',
+                value: 1,
+                itemStyle: {
+                color: '#ef2d36'
+                }
+            },
+            {
+                name: '男子团体短距离',
+                value: 1,
+                itemStyle: {
+                color: '#3e0317'
+                }
+            },
+            {
+                name: '男子50公里集体出发',
+                value: 1,
+                itemStyle: {
+                color: '#e62969'
+                }
+            },
+            {
+                name: '女子双追逐',
+                value: 1,
+                itemStyle: {
+                color: '#6569b0'
+                }
+            },
+            {
+                name: '女子个人短距离',
+                value: 1,
+                itemStyle: {
+                color: '#ef2d36'
+                }
+            },
+            {
+                name: '女子10公里',
+                value: 1,
+                itemStyle: {
+                color: '#3e0317'
+                }
+            },
+            {
+                name: '女子4×5公里接力',
+                value: 1,
+                itemStyle: {
+                color: '#e62969'
+                }
+            },
+            {
+                name: '女子团体短距离',
+                value: 1,
+                itemStyle: {
+                color: '#6569b0'
+                }
+            },
+            {
+                name: '女子30公里集体出发',
+                value: 1,
+                itemStyle: {
+                color: '#6569b0'
+                }
+            }
+            ]
+        },
+        {
+            name: '北欧两项',
+            itemStyle: {
+            color: '#f9dd28'
+            },
+            children: [
+            {
+                name: '男子个人-跳台滑雪标准台/越野滑雪10公里',
+                value: 1,
+                itemStyle: {
+                color: '#f26355'
+                }
+            },
+            {
+                name: '男子团体-跳台滑雪大跳台/越野滑雪4×5公里接力',
+                value: 1,
+                itemStyle: {
+                color: '#e2631e'
+                }
+            },
+            {
+                name: '男子个人-跳台滑雪大跳台/越野滑雪10公里',
+                value: 1,
+                itemStyle: {
+                color: '#fde404'
+                }
+            }
+            ]
+        },
+        ]
+    },
+    {
+        name: '滑冰',
+        itemStyle: {
+        color: '#ebb40f'
+        },
+        children: [
+        {
+            name: '短道速滑',
+            itemStyle: {
+            color: '#e1c315'
+            },
+            children: [
+            {
+                name: '男子500米',
+                value: 1,
+                itemStyle: {
+                color: '#9ea718'
+                }
+            },
+            {
+                name: '男子1000米',
+                value: 1,
+                itemStyle: {
+                color: '#94a76f'
+                }
+            },
+            {
+                name: '男子1500米',
+                value: 1,
+                itemStyle: {
+                color: '#d0b24f'
+                }
+            },
+            {
+                name: '男子5000米接力',
+                value: 1,
+                itemStyle: {
+                color: '#8eb646'
+                }
+            },
+            {
+                name: '女子500米',
+                value: 1,
+                itemStyle: {
+                color: '#faef07'
+                }
+            },
+            {
+                name: '女子1000米',
+                value: 1,
+                itemStyle: {
+                color: '#c1ba07'
+                }
+            },
+            {
+                name: '女子1500米',
+                value: 1,
+                itemStyle: {
+                color: '#9ea718'
+                }
+            },
+            {
+                name: '女子3000米接力',
+                value: 1,
+                itemStyle: {
+                color: '#94a76f'
+                }
+            },
+            {
+                name: '混合团体接力',
+                value: 1,
+                itemStyle: {
+                color: '#d0b24f'
+                }
+            }
+            ]
+        },
+        {
+            name: '速度滑冰',
+            itemStyle: {
+            color: '#b09733'
+            },
+            children: [
+            {
+                name: '男子500米',
+                value: 1,
+                itemStyle: {
+                color: '#8f1c53'
+                }
+            },
+            {
+                name: '男子1000米',
+                value: 1,
+                itemStyle: {
+                color: '#b34039'
+                }
+            },
+            {
+                name: '男子1500米',
+                value: 1,
+                itemStyle: {
+                color: '#ba9232'
+                }
+            },
+            {
+                name: '男子5000米',
+                value: 1,
+                itemStyle: {
+                color: '#8b6439'
+                }
+            },
+            {
+                name: '男子10000米',
+                value: 1,
+                itemStyle: {
+                color: '#8f1c53'
+                }
+            },
+            {
+                name: '男子团体追逐',
+                value: 1,
+                itemStyle: {
+                color: '#b34039'
+                }
+            },
+            {
+                name: '男子集体出发',
+                value: 1,
+                itemStyle: {
+                color: '#ba9232'
+                }
+            },
+            {
+                name: '女子500米',
+                value: 1,
+                itemStyle: {
+                color: '#8b6439'
+                }
+            },
+            {
+                name: '女子1000米',
+                value: 1,
+                itemStyle: {
+                color: '#8f1c53'
+                }
+            },
+            {
+                name: '女子1500米',
+                value: 1,
+                itemStyle: {
+                color: '#b34039'
+                }
+            },
+            {
+                name: '女子3000米',
+                value: 1,
+                itemStyle: {
+                color: '#ba9232'
+                }
+            },
+            {
+                name: '女子5000米',
+                value: 1,
+                itemStyle: {
+                color: '#8b6439'
+                }
+            },
+            {
+                name: '女子团体追逐',
+                value: 1,
+                itemStyle: {
+                color: '#8f1c53'
+                }
+            },
+            {
+                name: '女子集体出发',
+                value: 1,
+                itemStyle: {
+                color: '#b34039'
+                }
+            }
+            ]
+        },
+        {
+            name: '花样滑冰',
+            itemStyle: {
+            color: '#b0aa33'
+            },
+            children: [
+            {
+                name: '男子单人滑',
+                value: 1,
+                itemStyle: {
+                color: '#8f1c53'
+                }
+            },
+            {
+                name: '女子单人滑',
+                value: 1,
+                itemStyle: {
+                color: '#b34039'
+                }
+            },
+            {
+                name: '双人滑',
+                value: 1,
+                itemStyle: {
+                color: '#ba9232'
+                }
+            },
+            {
+                name: '冰上舞蹈',
+                value: 1,
+                itemStyle: {
+                color: '#8b6439'
+                }
+            },
+            {
+                name: '团体赛',
+                value: 1,
+                itemStyle: {
+                color: '#8f1c53'
+                }
+            }
+            ]
+        }
+        ]
+    },
+    {
+        name: '冰球',
+        itemStyle: {
+        color: '#187a2f'
+        },
+        children: [
+        {
+            name: '冰球',
+            itemStyle: {
+            color: '#3aa255'
+            },
+            children: [
+            {
+                name: '男子冰球',
+                value: 1,
+                itemStyle: {
+                color: '#a2bb2b'
+                }
+            },
+            {
+                name: '女子冰球',
+                value: 1,
+                itemStyle: {
+                color: '#62aa3c'
+                }
+            }
+            ]
+        }
+        ]
+    },
+    {
+        name: '冰壶',
+        itemStyle: {
+        color: '#0aa3b5'
+        },
+        children: [
+        {
+            name: '冰壶',
+            itemStyle: {
+            color: '#9db2b7'
+            },
+            children: [
+            {
+                name: '男子冰壶',
+                value: 1,
+                itemStyle: {
+                color: '#8b8c90'
+                }
+            },
+            {
+                name: '女子冰壶',
+                value: 1,
+                itemStyle: {
+                color: '#beb276'
+                }
+            },
+            {
+                name: '混合双人冰壶',
+                value: 1,
+                itemStyle: {
+                color: '#feb276'
+                }
+            }
+            ]
+        }
+        ]
+    },
+    {
+        name: '雪车',
+        itemStyle: {
+        color: '#c94930'
+        },
+        children: [
+        {
+            name: '雪车',
+            itemStyle: {
+            color: '#be8663'
+            },
+            children: [
+            {
+                name: '男子双人',
+                value: 1,
+                itemStyle: {
+                color: '#b9a449'
+                }
+            },
+            {
+                name: '男子四人',
+                value: 1,
+                itemStyle: {
+                color: '#899893'
+                }
+            },
+            {
+                name: '女子单人',
+                value: 1,
+                itemStyle: {
+                color: '#a1743b'
+                }
+            },
+            {
+                name: '女子双人',
+                value: 1,
+                itemStyle: {
+                color: '#894810'
+                }
+            }
+            ]
+        },
+        {
+            name: '钢架雪车',
+            itemStyle: {
+            color: '#ddaf61'
+            },
+            children: [
+            {
+                name: '男子钢架雪车',
+                value: 1,
+                itemStyle: {
+                color: '#b7906f'
+                }
+            },
+            {
+                name: '女子钢架雪车',
+                value: 1,
+                itemStyle: {
+                color: '#eb9d5f'
+                }
+            }
+            ]
+        }
+        ]
+    },
+    {
+        name: '冬季两项',
+        itemStyle: {
+        color: '#e65832'
+        },
+        children: [
+        {
+            name: '冬季两项',
+            itemStyle: {
+            color: '#d45a59'
+            },
+            children: [
+            {
+                name: '混合接力',
+                // name: '混合接力（女子2×6公里+男子2×7.5公里）',
+                value: 1,
+                itemStyle: {
+                color: '#da5c1f'
+                }
+            },
+            {
+                name: '男子10公里短距离',
+                value: 1,
+                itemStyle: {
+                color: '#310d0f'
+                }
+            },
+            {
+                name: '男子20公里个人',
+                value: 1,
+                itemStyle: {
+                color: '#ae341f'
+                }
+            },
+            {
+                name: '男子12.5公里追逐',
+                value: 1,
+                itemStyle: {
+                color: '#d78823'
+                }
+            },
+            {
+                name: '男子15公里集体出发',
+                value: 1,
+                itemStyle: {
+                color: '#da5c1f'
+                }
+            },
+            {
+                name: '男子4×7.5公里接力',
+                value: 1,
+                itemStyle: {
+                color: '#310d0f'
+                }
+            },
+            {
+                name: '女子7.5公里短距离',
+                value: 1,
+                itemStyle: {
+                color: '#ae341f'
+                }
+            },
+            {
+                name: '女子15公里个人',
+                value: 1,
+                itemStyle: {
+                color: '#d78823'
+                }
+            },
+            {
+                name: '女子10公里追逐',
+                value: 1,
+                itemStyle: {
+                color: '#da5c1f'
+                }
+            },
+            {
+                name: '女子12.5公里集体出发',
+                value: 1,
+                itemStyle: {
+                color: '#ae341f'
+                }
+            },
+            {
+                name: '女子4×6公里接力',
+                value: 1,
+                itemStyle: {
+                color: '#d78823'
+                }
+            }
+            ]
+        }
+        ]
+    },
+    {
+        name: '雪橇',
+        itemStyle: {
+        color: '#ad213e'
+        },
+        children: [
+        {
+            name: '雪橇',
+            itemStyle: {
+            color: '#b14d57'
+            },
+            children: [
+            {
+                name: '男子单人雪橇',
+                value: 1,
+                itemStyle: {
+                color: '#c78936'
+                }
+            },
+            {
+                name: '男子双人雪橇',
+                value: 1,
+                itemStyle: {
+                color: '#8c292c'
+                }
+            },
+            {
+                name: '女子单人雪橇',
+                value: 1,
+                itemStyle: {
+                color: '#e5762e'
+                }
+            },
+            {
+                name: '雪橇团体接力',
+                value: 1,
+                itemStyle: {
+                color: '#a16c5a'
+                }
+            }
+            ]
+        }
+        ]
+    },
+    ];
+    var option = {
+        /*title: {
+            //text: '2022冬奥会项目概览',
+            //subtext: 'Source: https://worldcoffeeresearch.org/work/sensory-lexicon/',
+            textStyle: {
+            fontSize: 14,
+            align: 'center'
+            },
+            subtextStyle: {
+            align: 'center'
+            },
+            // //sublink: 'https://worldcoffeeresearch.org/work/sensory-lexicon/'
+        },*/
+        series: {
+            type: 'sunburst',
+            data: data,
+            radius: [0, '85%'],
+            sort: undefined,
+            emphasis: {
+                focus: 'series',
+                blurScope: 'coordinateSystem'
+            },
+            levels: [
+            {},
+            {
+                r0: '15%',
+                r: '35%',
+                itemStyle: {
+                borderWidth: 2
+                },
+                label: {
+                rotate: 'tangential'
+                },
+                // itemStyle:{
+                //     fontSize:18,
+                //     highlight:{
+                //         color:'blue',
+                //     }
+                // },
+            },
+            {
+                r0: '35%',
+                r: '70%',
+                label: {
+                align: 'right'
+                },
+                itemStyle:{
+                    fontSize:18,
+                    highlight:{
+                        color:'blue',
+                    }
+                },
+            },
+            {
+                r0: '70%',
+                r: '72%',
+                label: {
+                position: 'outside',
+                padding: 3,
+                silent: false
+                },
+                itemStyle: {
+                borderWidth: 3
+                }
+            }
+            ]
+        }
+    };
+    myChart.setOption(option);
+    myChart.on('click', function (params) {  
+        console.log(params.data.children)
+        //点击十五个种类发生跳转
+        if(!params.data.children){
+            document.getElementById("text1").innerHTML="项目简介"
+        }
+        else{
+        switch (params.data.name){
+            case '高山滑雪':
+                img.src="./image/Alpine.png"
+                document.getElementById("text1").innerHTML="项目简介"
+                document.getElementById("intro").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;高山滑雪，是以滑雪板、雪鞋、固定器和滑雪杖为主要用具，从山上向山下，沿着旗门设定的赛道滑下的雪上竞速运动项目。滑降比赛场地的垂直高度差通常男子800米以上，女子450米以上。转、大回转、超级大回转场地高度差从140米到650米不等。比赛中，运动员须穿越相应数量的旗门。碰倒旗杆不算犯规，如漏过一个旗门，则为犯规不计成绩。 "
+                document.getElementById("text2").innerHTML="项目历史"
+                document.getElementById("history").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;高山滑雪起源于阿尔卑斯山地域，故又称“阿尔卑斯滑雪”。高山滑雪是在越野滑雪基础上逐步形成的，是雪上运动的一个分支。高山滑雪诞生于1907年，同年第一个高山滑雪运动组织“阿尔卑斯山滑雪俱乐部”创立。1936年起，高山滑雪被列为冬奥会比赛项目。"
+                document.getElementById("text3").innerHTML="重要赛事"
+                document.getElementById("item").innerHTML="国际：世界高山滑雪锦标赛，每两年举行一届世界杯高山滑雪系列赛，每个年度举行多次，最后一站还有总决赛的性质;世界高山滑雪青年锦标赛，每两年举行一届亚洲：亚洲青少年高山滑雪锦标赛，每年举办一次;中国：全国高山滑雪锦标赛，每年举行一次;全国高山滑雪冠军赛，每年举行一次"
+                document.getElementById("text4").innerHTML=""
+                document.getElementById("actor").innerHTML=""
+                a.href="./champions/Alpine.html";
+                a.innerText="2022年北京冬奥会夺冠时刻"
+                break;
+            case '自由式滑雪':
+                img.src="./image/freestyle-skiing.png"
+                document.getElementById("text1").innerHTML="项目简介"
+                document.getElementById("intro").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;自由式滑雪，是以滑雪板和滑雪杖为工具，在专门的滑雪场上，通过完成一系列的规定和自选动作而进行的一种雪上竞技项目。 "
+                document.getElementById("text2").innerHTML="项目历史"
+                document.getElementById("history").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;自由式滑雪起源于20世纪60年代的美国，从1992年开始，男、女单人雪上技巧被列为冬奥会比赛项目。1988年和1992年被列入冬奥会表演项目。"
+                document.getElementById("text3").innerHTML="重要赛事"
+                document.getElementById("item").innerHTML="国际：世界滑雪锦标赛、世界杯滑雪赛、冬季奥运会滑雪比赛、亚洲冬季运动会、世界大学生运动会国内：中华人民共和国冬季运动会、中华人民共和国大学生运动会"
+                document.getElementById("text4").innerHTML="代表人物"
+                document.getElementById("actor").innerHTML="李妮娜：中国自由式滑雪第一个世界杯冠军；韩晓鹏：冬奥会首位夺冠中国男子运动员；2022北京冬奥会最具话题度运动员：谷爱凌：为中国夺得两金一银"
+                a.href="./champions/freestyle-skiing.html";
+                a.innerText="2022年北京冬奥会夺冠时刻"
+                break;
+            case '单板滑雪':
+                img.src="./image/snowboarding.png"
+                document.getElementById("text1").innerHTML="项目简介"
+                document.getElementById("intro").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;单板滑雪是一项以一块滑雪板为工具，在规定的山坡线路上快速回转滑降，或在特设的“U”形场地内凭借滑坡起跳，在空中完成各种高难度动作的雪上竞技项目。 "
+                document.getElementById("text2").innerHTML="项目历史"
+                document.getElementById("history").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;单板滑雪起源于20世纪60年代的美国密歇根州，从1998年开始，单板滑雪的高山大回转和“U”形场地雪上单板技巧成为正式比赛项目。2003年，中国的单板滑雪正式立项，主要开展U型场地雪上技巧项目。11各项目中，障碍追逐混合团体比赛是北京冬奥会新增小项。"
+                document.getElementById("text3").innerHTML="重要赛事"
+                document.getElementById("item").innerHTML="国际：世界滑雪锦标赛、世界杯滑雪赛、冬季奥运会滑雪比赛、亚洲冬季运动会、世界大学生运动会 ；国内：中华人民共和国冬季运动会、中华人民共和国大学生运动会"
+                document.getElementById("text4").innerHTML="代表人物"
+                document.getElementById("actor").innerHTML="2022北京冬奥会最具话题度运动员：苏翊鸣：代表中国夺得一金一银"
+                a.href="./champions/snowboarding.html";
+                a.innerText="2022年北京冬奥会夺冠时刻"
+                break;
+            case '跳台滑雪':
+                img.src="./image/ski-jumping.png"
+                document.getElementById("text1").innerHTML="项目简介"
+                document.getElementById("intro").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;跳台滑雪是以滑雪板为工具，在专设的跳台上以自身的体重通过助滑坡获得的速度比跳跃距离和动作姿势的一种雪上竞技项目。在飞行过程中，运动员可靠手臂摆动控制身体平衡。落地采用类似弓箭步的双腿微曲姿势，能有效减少对人体强大的冲击力。由于跳台助滑道的角度及起跳端的仰起角度等不同，加上气温、雪温风力等自然条件的差异，跳台滑雪比赛只有最好成绩。 "
+                document.getElementById("text2").innerHTML="项目历史"
+                document.getElementById("history").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;跳台滑雪起源于19世纪的挪威，1924年，跳台滑雪被列为冬奥会项目；1976年，国际滑雪联合会决定将标准坡度和大坡度分别由K70和K90改为K90和K120。1982年，吉林市成立了跳台滑雪队。1984年，中国国内举行了首次跳台滑雪比赛。 2003年，中国跳台滑雪队获得赞助并常年在奥地利训练。"
+                document.getElementById("text3").innerHTML="重要赛事"
+                document.getElementById("item").innerHTML="国际：世界滑雪锦标赛、世界杯滑雪赛、冬季奥运会滑雪比赛、亚洲冬季运动会、世界大学生运动会；国内：中华人民共和国冬季运动会、中华人民共和国大学生运动会"
+                document.getElementById("text4").innerHTML="代表人物"
+                document.getElementById("actor").innerHTML="尼凯宁：芬兰跳台滑雪运动员，有世界“跳雪之王”的美称"
+                a.href="./champions/ski-jumping.html";
+                a.innerText="2022年北京冬奥会夺冠时刻"
+                break;
+            case '越野滑雪':
+                img.src="./image/langlauf.png"
+                document.getElementById("text1").innerHTML="项目简介"
+                document.getElementById("intro").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;越野滑雪是借助滑雪用具，运用登山、滑降、转弯、滑行等基本技术，滑行于山丘雪原的运动项目。 "
+                document.getElementById("text2").innerHTML="项目历史"
+                document.getElementById("history").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;越野滑雪起源于北欧，又称北欧滑雪，是世界运动史上最古老的运动项目之一。1924年首次列入冬季奥运会比赛项目。1973-1974赛季，男子世界杯越野滑雪锦标赛成功举办，女子世界杯越野滑雪锦标赛是从1978-1979赛季开始。"
+                document.getElementById("text3").innerHTML="重要赛事"
+                document.getElementById("item").innerHTML="世界杯越野滑雪锦标赛、冬奥会"
+                document.getElementById("text4").innerHTML="代表人物"
+                document.getElementById("actor").innerHTML="王春丽：中国女子越野滑雪运动员；海曼莱宁：芬兰女子越野滑雪运动员，被称为“滑雪女王”"
+                a.href="./champions/langlauf.html";
+                a.innerText="2022年北京冬奥会夺冠时刻"
+                break;
+            case '北欧两项':
+                img.src="./image/Nordic.png"
+                document.getElementById("text1").innerHTML="项目简介"
+                document.getElementById("intro").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;由越野滑雪和跳台滑雪组成，要求运动员既要有快速越野滑行的能力，还要具备精确的身体姿态控制能力和突出的跳跃能力。冬奥会先比跳台再比滑雪中间相隔2-3个小时， 以利于运动员的疲劳恢复。比赛主要规则与跳台滑雪和越野滑雪单项比赛的规则相同，越野滑雪全部采用自由技术。 "
+                document.getElementById("text2").innerHTML="项目历史"
+                document.getElementById("history").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;北欧两项起源于北欧，1883年被列入霍尔门科伦滑雪大奖赛，20世纪初开始向世界推广，1924年被列为首届冬季奥运会比赛项目，1988年第15届冬季奥运会开始设团体项目。2002年美国“冬奥会”上新增加了个人追逐（竞速）赛。"
+                document.getElementById("text3").innerHTML="重要赛事"
+                document.getElementById("item").innerHTML="国际：冬季奥运会、北欧滑雪世界锦标赛、世界杯、世界大学生冬季运动会；亚洲：亚洲冬季运动会 ；国内：中华人民共和国青年运动会、全国冬季运动会、全国北欧两项锦标赛。"
+                document.getElementById("text4").innerHTML="代表人物"
+                document.getElementById("actor").innerHTML="德国的阿克尔曼、芬兰的曼尼宁、法国的杰森·拉米—查普伊等"
+                a.href="./champions/nordic.html";
+                a.innerText="2022年北京冬奥会夺冠时刻"
+                break;
+            case '短道速滑':
+                img.src="./image/short-track.png"
+                document.getElementById("text1").innerHTML="项目简介"
+                document.getElementById("intro").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;全称短跑道速度滑冰，是在长度较短的跑道上进行的冰上竞速运动。跑道内圆周长111.12米，直道长28.85米，弯道最小半径8米。一般进行三到四轮，接力比赛分为半决赛和决赛两轮进行。短距离和接力4人(队)一组，长距离6人一组。接力比赛通常每人每次滑一至两圈进行替换，替换采用推接方式在直道上进行。 "
+                document.getElementById("text2").innerHTML="项目历史"
+                document.getElementById("history").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;短道速滑起源于加拿大，当时加拿大的一些速度滑冰爱好者常到室内冰球场上练习，随之产生了室内速度滑冰的比赛。20世纪初，短道速滑逐渐在欧洲和美洲国家广泛开展。1975年，国际滑冰联盟成立短跑道速度滑冰技术委员会。1981年起，开始举办世界短道速滑锦标赛。1988年，短道速滑在卡尔加里冬季奥运会被首次列为冬季奥运会表演项目，1992年，阿尔贝维尔冬季奥运会将短道速滑列为正式比赛项目。"
+                document.getElementById("text3").innerHTML="重要赛事"
+                document.getElementById("item").innerHTML="世界短道速滑锦标赛、短道速滑世界杯赛、亚洲短道速滑公开大奖赛、中国短道速滑冠军赛"
+                document.getElementById("text4").innerHTML="代表人物"
+                document.getElementById("actor").innerHTML="王濛、周洋等；2022北京冬奥会最具话题度运动员：武大靖、任子威等"
+                a.href="./champions/short-trace.html";
+                a.innerText="2022年北京冬奥会夺冠时刻"
+                break;
+            case '速度滑冰':
+                img.src="./image/speed-skating.png"
+                document.getElementById("text1").innerHTML="项目简介"
+                document.getElementById("intro").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;速度滑冰简称速滑，是以冰刀为工具在冰上进行的一种冰上竞速运动，它是指在规定距离内以竞速为目的的滑冰比赛。个人比赛每组两名选手，内外两道抽签决定，每滑行一圈双方都要交换赛道。团体追逐赛每组2队，每队3名选手，从相对的直道上同时出发。中国为2022年冬奥会修建了国家速滑馆——“冰丝带”，馆内有亚洲最大的冰面，赛道周长400米。 "
+                document.getElementById("text2").innerHTML="项目历史"
+                document.getElementById("history").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;速度滑冰早在十一二世纪，在荷兰、英国、瑞士以及斯堪的纳维亚一些国家的文献中有记载，从19世纪40年代开始，速度滑冰从英格兰和荷兰迅速传入其他国家，滑冰俱乐部也由此纷纷建立。1879年，第一个全国性的滑冰领导机构—英国滑冰协会创立。1893年1月，在国际滑联的领导下，第一届世界男子速度滑冰锦标赛在阿姆斯特丹举行。男、女速度滑冰分别于1924年、1960年被列为冬奥会比赛项目。"
+                document.getElementById("text3").innerHTML="重要赛事"
+                document.getElementById("item").innerHTML="世界男子速滑锦标赛、世界男女短距离速滑锦标赛、欧洲男子速滑锦标赛、速度滑冰亚洲锦标赛、全国速度滑冰锦标赛"
+                document.getElementById("text4").innerHTML="代表人物"
+                document.getElementById("actor").innerHTML="李琰、埃登等"
+                a.href="./champions/speed-skating.html";
+                a.innerText="2022年北京冬奥会夺冠时刻"
+                break;
+            case '花样滑冰':
+                img.src="./image/figure-skating.png"
+                document.getElementById("text1").innerHTML="项目简介"
+                document.getElementById("intro").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;花样滑冰是运动员通过冰刀在冰面上划出图形，并表演跳跃、旋转等高难度动作，短节目和韵律舞都有规定动作；比赛不允许使用布景和灯光效果，服装成艺术表演的唯一辅助因素。花样滑冰的裁判会按照动作的质量与艺术性表现进行综合评分，最高为6分。 "
+                document.getElementById("text2").innerHTML="项目历史"
+                document.getElementById("history").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;花样滑冰起源于18世纪的英国，后相继在德国、北美地区国家迅速开展，是曾进入夏季奥运会的冬季项目。1892年，国际滑冰联盟在荷兰正式成立，并制定了该项目的比赛规则。1872年奥地利首次举办花样滑冰比赛。1882年，在奥地利诞生了双人滑。1896年在俄国彼得堡举行首次世界男子单人花样滑冰锦标赛。1990年，亚洲滑冰联合会成立。"
+                document.getElementById("text3").innerHTML="重要赛事"
+                document.getElementById("item").innerHTML="世界花样滑冰锦标赛、冬季奥林匹克运动会、欧洲花样滑冰锦标赛、亚洲冬季运动会、中国杯世界花样滑冰大奖赛、全国花样滑冰锦标赛。"
+                document.getElementById("text4").innerHTML="代表人物"
+                document.getElementById("actor").innerHTML="羽生结弦等;2022北京冬奥会最具话题度运动员：羽生结弦，金博洋等"
+                a.href="./champions/figure-skating.html";
+                a.innerText="2022年北京冬奥会夺冠时刻"
+                break;
+            case '冰球':
+                img.src="./image/ice-hockey.png"
+                document.getElementById("text1").innerHTML="项目简介"
+                document.getElementById("intro").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;冰球运动是以冰刀和冰球杆为工具在冰上进行的一种相互对抗的集体性竞技运动，在国际体育分类学上属独立的冬季运动项目。冰球比赛对抗剧烈，手中还握有球杆，装备防护武装到牙齿，女运动员、守门员和青少年运动员还有特殊规定。冰球比赛双方各6人出场，共进行3局。每局净比赛时间20分钟。 "
+                document.getElementById("text2").innerHTML="项目历史"
+                document.getElementById("history").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;冰球运动的产生晚于足球、曲棍球和速度滑冰等运动项目。据考证，现代冰球运动起源于加拿大，1920年被列入夏季奥运会的比赛项目。在加拿大的英国留学生W·F·罗伯逊，滑冰很出色，他把在英国学习期间了解到的曲棍球，移到冰上打，并结合“拉克罗斯球”的特点，于1783年创造了一种新的冰上运动——冰球。"
+                document.getElementById("text3").innerHTML="重要赛事"
+                document.getElementById("item").innerHTML="斯坦利杯冰球赛、冬奥会冰球比赛、全国冬季运动会冰球赛"
+                document.getElementById("text4").innerHTML=""
+                document.getElementById("actor").innerHTML=""
+                a.href="./champions/ice-hockey.html";
+                a.innerText="2022年北京冬奥会夺冠时刻"
+                break;
+            case '冰壶':
+                img.src="./image/curling.png"
+                document.getElementById("text1").innerHTML="项目简介"
+                document.getElementById("intro").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;冰壶被称为”冰上国际象棋“，是以队为单位在冰上进行的一种投掷性竞赛项目，展现的是动静之美和取与舍的智慧，它考验参与者的体能与脑力。为减小壶与冰面的摩擦比赛前要在冰面上均匀 喷洒水珠，形成点状麻面。比赛双方各4人登场，分一垒、二垒、三垒和四垒，顺序交叉投壶，10局比赛，每局中冰壶最接近圆心的一方得分，得分多者获胜。 "
+                document.getElementById("text2").innerHTML="项目历史"
+                document.getElementById("history").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;冰壶于14世纪起源于苏格兰。1795年，第一个冰壶俱乐部在苏格兰创立。1927年，加拿大举行了首次全国性冰壶比赛，冰壶于1955年传入亚洲。1924年冰壶作为表演项目被纳入第一届冬奥会。1998年正式列入冬奥会比赛项目。"
+                document.getElementById("text3").innerHTML="重要赛事"
+                document.getElementById("item").innerHTML="冬奥会、世界冰壶锦标赛、全国青年冰壶锦标赛"
+                document.getElementById("text4").innerHTML=""
+                document.getElementById("actor").innerHTML=""
+                a.href="./champions/curling.html";
+                a.innerText="2022年北京冬奥会夺冠时刻"
+                break;
+            case '雪车':
+                img.src="./image/snowmobile.png"
+                document.getElementById("text1").innerHTML="项目简介"
+                document.getElementById("intro").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;雪车也称“有舵雪橇”，是一种集体乘坐雪车，是乘坐可操纵方向的雪橇在冰道上滑行的运动项目。雪车的平均时速在100公里左右，最高可达160公里。舵手通过雪车内两个把手控制的滑轮系统驾驶雪车。规则对车身和运动员体重都有要求，重量不足可以为车体配重。 "
+                document.getElementById("text2").innerHTML="项目历史"
+                document.getElementById("history").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;雪车起源于19世纪后期的瑞士，雪车男子四人座在1924年第一届法国夏幕尼冬季奥运会上被采纳为正式比赛项目。1897年，第一个有舵雪橇俱乐部在圣莫里茨创立。1924年第一届冬奥会中，雪车就已经成为比赛项目，1998年，女子2人座项目加入冬奥会。"
+                document.getElementById("text3").innerHTML="重要赛事"
+                document.getElementById("item").innerHTML="冬奥会、世界雪车锦标赛、全国雪车锦标赛"
+                document.getElementById("text4").innerHTML=""
+                document.getElementById("actor").innerHTML=""
+                a.href="./champions/snowmobile.html";
+                a.innerText="2022年北京冬奥会夺冠时刻"
+                break;
+            case '钢架雪车':
+                img.src="./image/skeleton.png"
+                document.getElementById("text1").innerHTML="项目简介"
+                document.getElementById("intro").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;钢架雪车也称卧式雪橇、俯式冰橇，又称冰橇，是以雪橇为工具，借助起滑后的惯性从山坡沿专门构筑的冰道快速滑降的一种冬季运动。钢架雪车没有转向器和刹车装置，底部由铅块加重的骨架和两根固定的管状钢刃组成。规则对车身和运动员体重都有要求，如果超重需要减重。中途允许运动员掉落雪车，但在通过终点时，选手必须在雪车上才算完成比赛。钢架雪车设男子、女子各一个项目。它和雪橇比赛最主要的区别是:头朝前俯卧滑行。 "
+                document.getElementById("text2").innerHTML="项目历史"
+                document.getElementById("history").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;19世纪，钢架雪车在瑞士、奥地利、意大利、德国以及美国等国家兴起。1928年，第二届冬奥会在瑞士圣莫里茨举行，作为无舵雪橇的故乡，瑞士决定将钢架雪车纳入冬奥会，获得了国际奥委会的批准。2002年，盐湖城冬奥会，再度成为冬奥会的比赛项目，设男子和女子2个项目。"
+                document.getElementById("text3").innerHTML="重要赛事"
+                document.getElementById("item").innerHTML="冬奥会、全国钢架雪车锦标赛、雪车锦标赛"
+                document.getElementById("text4").innerHTML=""
+                document.getElementById("actor").innerHTML=""
+                a.href="./champions/skeleton.html";
+                a.innerText="2022年北京冬奥会夺冠时刻"
+                break;
+            case '冬季两项':
+                img.src="./image/biathlon.png"
+                document.getElementById("text1").innerHTML="项目简介"
+                document.getElementById("intro").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;冬季两项由越野滑雪和射击两种特点不同的相结合的竞赛项目结合在一起进行的运动，在激烈的滑雪比赛中，插入2-4次射击，要求运动员既要有由动转静的能力，又要有由静转动的能力。源自北欧，在第8届冬奥会被列入比赛项目。在激烈的滑雪比赛中，插入2-4次射击，考验动静转换能力。冬季两项射击场一般设在起终点区附近，运动员到达射击位置，迅速调整装备，摘下小口径专用步枪，卧姿、立姿，5发子弹，每次射击5个靶子，口径5.6毫米，距离50米。 "
+                document.getElementById("text2").innerHTML="项目历史"
+                document.getElementById("history").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;冬季两项起源于挪威，是一种滑雪加射击的比赛。冬季两项在1924、1928、1936和1948年冬奥会上被列为表演项目，1958年举行第1届世界现代冬季两项锦标赛，1960年被列为冬奥会比赛项目，并定名为现代冬季两项。女选手首次参加世锦赛是在1984年，而女子项目进入冬奥会是1992年阿尔贝维尔冬奥会。其中男子15公里集体出发赛和12.5公里集体出发赛在2006年都灵首次亮相奥运会。"
+                document.getElementById("text3").innerHTML="重要赛事"
+                document.getElementById("item").innerHTML="冬季两项世界杯、奥林匹克运动会"
+                document.getElementById("text4").innerHTML=""
+                document.getElementById("actor").innerHTML=""
+                a.href="./champions/nordic.html";
+                a.innerText="2022年北京冬奥会夺冠时刻"
+                break;
+            case '雪橇':
+                img.src="./image/sled.png"
+                document.getElementById("text1").innerHTML="项目简介"
+                document.getElementById("intro").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;雪橇是在比赛中乘坐金属制或木制的双橇滑板沿着有各种弯度的专用冰道高速滑降至终点的一种运动。雪橇比赛规则允许运动员通过配重增加重量，但如果配重超出规定的范围，则会被取消比赛资格。雪橇橇刀和钢体部分在使用前后，需进行打磨，根据气温\冰温和运动员技术水平调整出合适角度。 "
+                document.getElementById("text2").innerHTML="项目历史"
+                document.getElementById("history").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;雪橇运动起源于瑞士及北欧地区，后逐渐在欧洲、北美和亚洲等地流行。雪橇最初为木制，后发展成用金属制作。1884年英国举行首次雪橇公开赛。1964年因斯布鲁克冬季奥运会雪橇首次亮相奥运会。2014年索契冬季奥运会增加了雪橇团体接力。"
+                document.getElementById("text3").innerHTML="重要赛事"
+                document.getElementById("item").innerHTML="冬奥会、世界有舵雪橇锦标赛、全国雪橇锦标赛"
+                document.getElementById("text4").innerHTML=""
+                document.getElementById("actor").innerHTML=""
+                a.href="./champions/sled.html";
+                a.innerText="2022年北京冬奥会夺冠时刻"
+                break;
+            default:
+                img.src="./image/dundun.png"
+                document.getElementById("text1").innerHTML="2022年北京冬奥会项目简介"
+                document.getElementById("intro").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2022年北京冬奥会共设有7个大项、15个分项、109个小项，场馆分布在北京赛区、延庆赛区和张家口赛区。7个大项分别为滑冰、滑雪、冰壶、冰球、雪橇、雪车和冬季两项。本届冬奥会新增7个项目，分别是女子单人雪地摩托、短道速滑混合团体接力、跳台滑雪混合团体、自由式滑雪大跳台、自由式滑雪空中技巧混合团体和单板障碍追逐混合团体。"
+                document.getElementById("text2").innerHTML="冬奥会项目原理"
+                document.getElementById("history").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;冬奥会项目是由大项（Sport）、分项（Discipline）和小项（Event）组成。一个大项（Sport）对应一个国际联合会（IF） 。一个大项包含一个或多个分项；一个分项（Discipline）包含一个或多个小项。一个小项（Event）对应一块金牌。"
+                document.getElementById("text3").innerHTML="冬奥会项目历史"
+                document.getElementById("item").innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2002年盐湖城冬奥会，冬奥会7个大项15个分项的新格局正式确立。21世纪冬奥会大项和分项得以固定，但小项仍然在不断发生变化：2014年索契冬奥会国际奥委会增加了12个小项，使竞赛项目达到了98项。2018年平昌冬奥会冬奥小项增至102项，首次突破100大关。2022年北京冬奥会将新增7个小项，分别为女子单人雪车、短道速滑混合接力、跳台滑雪混合团体、自由式滑雪男子大跳台、自由式滑雪女子大跳台、自由式滑雪空中技巧混合团体、单板滑雪障碍追逐混合团体，届时总共将进行109个小项的比赛，金牌总数增至109枚。"
+                document.getElementById("text4").innerHTML=""
+                document.getElementById("actor").innerHTML=""
+                a.href="";
+                a.innerText=""
+            }
+        }
+    })
+        
+</script>
+</body>
+</html>

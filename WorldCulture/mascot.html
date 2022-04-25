@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+    <title>冬奥会吉祥物</title>
+    <!-- <link rel="stylesheet" href="../css/68.css"> -->
+    <style>
+        *{
+        /* 初始化 */
+        margin: 0;
+        padding: 0;
+        --loading-grey :#ededed;
+        }
+        body{
+            /* 100%窗口高度 */
+            height: 100vh;
+            width: 9000px;
+            /* 弹性布局 水平+垂直居中 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* 渐变背景 */
+            /* background-color: #93bcdc; */
+            background: url(./image/蓝色云纹.png);
+            /* background: linear-gradient(200deg,#517fa4,#243949); */
+        }
+        .card{
+            /* 相对定位 */
+            position: relative;
+            width: 300px;
+            height: 450px;
+            margin: 20px;
+            background-color: #758a99;
+            border-radius: 20px;
+            /* 溢出隐藏 */
+            overflow: hidden;
+            /* 弹性布局 */
+            display: flex;
+            /* 元素纵向排列 */
+            flex-direction: column;
+            /* 居中 */
+            align-items: center;
+            color: #fff;
+            /* 阴影 */
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            /* 不让其被挤压 */
+            flex-shrink: 0;
+        }
+        .intro{
+            /* 相对定位 */
+            position: relative;
+            width: 300px;
+            height: 450px;
+            margin: 20px;
+            background-color: #243949;
+            border-radius: 20px;
+            /* 溢出隐藏 */
+            overflow: hidden;
+            /* 弹性布局 */
+            display: flex;
+            /* 元素纵向排列 */
+            flex-direction: column;
+            /* 居中 */
+            align-items: center;
+            color: #fff;
+            /* 阴影 */
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            /* 不让其被挤压 */
+            flex-shrink: 0;
+        }
+        .intro h1{
+            position:absolute ;
+            top:80px;
+            font-size: 38px;
+        }
+        .intro h2{
+            margin-top: 170px;
+            width: 80%;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+        }
+        .intro {
+            background-color: #243949;
+            background: linear-gradient(
+                100deg,
+                rgba(255,255,255,0) 40%,
+                rgba(255,255,255,.5) 50%,
+                rgba(255,255,255,0) 60%
+            ) #243949;
+            background-size: 200% 100%;
+            background-position-x: 180% ;
+            animation: 2s intro ease-in-out infinite;
+        }
+
+        @keyframes intro{
+            to{
+                background-position-x:-20% ;
+            }
+        }
+        .intro p{
+            width: 90%;
+            text-indent: 32px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            line-height: 30px;
+        }
+        .card .photo img{
+            width: 100%;
+            height: 100%;
+            /* 保持原有尺寸比例，裁切长边 */
+            object-fit: cover;
+        }
+        /* 默认大图 */
+        .card .photo{
+            /* 绝对定位 */
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 0%;
+            overflow: hidden;
+            /* 动画过渡 */
+            transition: 0.5s;
+        }
+        /* 鼠标移入变小图 */
+        .card:hover .photo{
+            top: 30px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0,0,0,0.8);
+        }
+        /* 这里加个黑色到透明的渐变背景，可以更好的看清楚名字 */
+        .card .photo::before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom,transparent 50%,#222);
+        }
+        .card h1{
+            position: absolute;
+            top: 370px;
+            transition: 0.5s;
+        }
+        .card:hover h1{
+            top: 170px;
+        }
+        .card h2{
+            margin-top: 220px;
+            width: 80%;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+        }
+        .card p{
+            width: 90%;
+            text-indent: 32px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            line-height: 30px;
+        }
+        .card a{
+            font-size: 14px;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.5);
+            padding: 8px 32px;
+            border-radius: 8px;
+        }
+        .card a:hover{
+            color: #fff;
+            background-color: rgba(255,255,255,0.2);
+        }
+        #fish img {
+            width: 100%; max-width: 100%;
+        }
+        #fish{
+            transition: all 2s ease-in-out;
+        }
+        #fish img:hover{
+            cursor:pointer;
+            transform: scale(1.4);
+        }
+
+    </style>
+</head>
+
+<body>
+    <a id="fish" href="./extrance.html" >
+        <img style="width: 150px;position: absolute;top:10px;left: 20px;" src="./image/鲸鱼.png" >
+        <p style="position: absolute;top:7px;left:175px;font-weight:600;font-size: 20px;margin-top: 20px;color: #0715af;">返回</p>
+    </a>
+    <div class="intro">
+        <!-- <div class="photo"><img src="./image/冰墩墩.jpg" alt=""></div> -->
+        <h1>吉祥物</h1>
+        <h2>关于吉祥物</h2>
+        <p class="description">1968年以来，奥运会吉祥物扮演了重要角色。它们承载着具象化奥林匹克精神的重任，传递每届奥运会的核心价值观；推广主办城市的历史和文化；为活动增添节日氛围。</p>
+        <!-- <a href="https://www.beijing2022.cn/mascot/index.htm" target="_blank">了解更多</a> -->
+    </div>
+    <div class="card">
+        <div class="photo"><img src="./image/冰墩墩.jpg" alt=""></div>
+        <h1>冰墩墩</h1>
+        <h2>第24届北京冬奥会</h2>
+        <p>冰墩墩以熊猫为原型，象征冬奥会运动员强壮的身体、坚韧的意志和鼓舞人心的奥林匹克精神。</p>
+        <a href="https://www.beijing2022.cn/mascot/index.htm" target="_blank">了解更多</a>
+    </div>
+    <div class="card">
+        <div class="photo"><img src="./image/白虎.jpg" alt=""></div>
+        <h1>Soohorang 白虎</h1>
+        <h2>第23届平昌冬奥会</h2>
+        <p>Soohorang不仅具备挑战精神和热情，同时还是一位值得信任的伙伴，保护着冬奥会参与者。</p>
+        <a href="https://olympics.com/zh/olympic-games/pyeongchang-2018/mascot" target="_blank">了解更多</a>
+    </div>
+    <div class="card">
+        <div class="photo"><img src="./image/野兔.jpg" alt=""></div>
+        <h1>野兔</h1>
+        <h2>第22届索契冬奥会</h2>
+        <p>野兔是文化融合的象征，在俄罗斯兔子有负面的象征意，但是在国际上，她可爱、温顺并灵动。</p>
+        <a href="https://olympics.com/zh/olympic-games/sochi-2014/mascot" target="_blank">了解更多</a>
+    </div>
+    <div class="card">
+        <div class="photo"><img src="./image/白熊.jpg" alt=""></div>
+        <h1>白熊</h1>
+        <h2>第22届索契冬奥会</h2>
+        <p>熊被称作俄罗斯民族的图腾，吉祥物“北极熊”在很大程度上彰显举办国的传统文化。</p>
+        <a href="https://olympics.com/zh/olympic-games/sochi-2014/mascot"target="_blank"> 了解更多</a>
+    </div>
+    <div class="card">
+        <div class="photo"><img src="./image/雪豹.jpg" alt=""></div>
+        <h1>雪豹</h1>
+        <h2>第22届索契冬奥会</h2>
+        <p>雪豹帅气矫健的身姿，象征着“壮硕、强健、速度快且优美”，贴近体育比赛。</p>
+        <a href="https://olympics.com/zh/olympic-games/sochi-2014/mascot"target="_blank">了解更多</a>
+    </div>
+    <div class="card">
+        <div class="photo"><img src="./image/魁特奇.jpg" alt=""></div>
+        <h1>Quatchi 魁特奇</h1>
+        <h2>第21届温哥华奥会</h2>
+        <p>魁特奇是当地传说中非常受欢迎的森林大脚野人角色。它浑身覆盖厚皮毛，脚踩雪地靴，头戴耳罩。</p>
+        <a href="https://olympics.com/zh/olympic-games/vancouver-2010/mascot" target="_blank">了解更多</a>
+    </div>
+    <div class="card">
+        <div class="photo"><img src="./image/米加.jpg" alt=""></div>
+        <h1>Miga 米加</h1>
+        <h2>第21届温哥华奥会</h2>
+        <p>米加的形象是神兽海熊，是逆戟鲸和白灵熊合体。白灵熊只生活在不列颠哥伦比亚省。</p>
+        <a href="https://olympics.com/zh/olympic-games/vancouver-2010/mascot" target="_blank">了解更多</a>
+    </div>
+    <div class="card">
+        <div class="photo"><img src="./image/内韦.jpg" alt=""></div>
+        <h1>Neve 内韦</h1>
+        <h2>第20届都灵冬奥会</h2>
+        <p>内韦是一个身披红色的雪球造型，具有流线型、圆润的轮廓，让人们联想到动作的和谐和优雅。</p>
+        <a href="https://olympics.com/zh/olympic-games/turin-2006/mascot" target="_blank">了解更多</a>
+    </div>
+    <div class="card">
+        <div class="photo"><img src="./image/格利兹.jpg" alt=""></div>
+        <h1>Gliz 格利兹</h1>
+        <h2>第20届都灵冬奥会</h2>
+        <p>格利兹是身披蓝色的冰块造形，棱角分明的头部和平滑的身体相结合，让人们联想到运动员的力量。</p>
+        <a href="https://olympics.com/zh/olympic-games/turin-2006/mascot" target="_blank">了解更多</a>
+    </div>
+    <div class="card">
+        <div class="photo"><img src="./image/学靴兔.jpg" alt=""></div>
+        <h1>Powder 雪靴兔</h1>
+        <h2>第19届盐湖城冬奥会</h2>
+        <p>雪靴兔象征的犹他州的白雪，同时体现了奥林匹克运动口号中的“更快”。</p>
+        <a href="https://olympics.com/zh/olympic-games/salt-lake-city-2002/mascot" target="_blank">了解更多</a>
+    </div>
+    <div class="card">
+        <div class="photo"><img src="./image/美洲黑熊.jpg" alt=""></div>
+        <h1>Coal 美洲黑熊</h1>
+        <h2>第19届盐湖城冬奥会</h2>
+        <p>美洲黑熊象征的犹他州的煤矿业，同时体现了奥林匹克运动口号中的“更强”。</p>
+        <a href="https://olympics.com/zh/olympic-games/salt-lake-city-2002/mascot" target="_blank">了解更多</a>
+    </div>
+    <div class="card">
+        <div class="photo"><img src="./image/北美草原小狼.jpg" alt=""></div>
+        <h1>Copper 草原小狼</h1>
+        <h2>第19届盐湖城冬奥会</h2>
+        <p>北美草原小狼象征的犹他州的铜业，同时体现了奥林匹克运动口号中的“更高”。</p>
+        <a href="https://olympics.com/zh/olympic-games/salt-lake-city-2002/mascot" target="_blank">了解更多</a>
+    </div>
+    <div class="card">
+        <div class="photo"><img src="./image/寸喜.jpg" alt=""></div>
+        <h1>Sukki 寸喜</h1>
+        <h2>第18届长野冬奥会</h2>
+        <p>雪地猫头鹰寸喜也称为Snowlets，名字对应其中的snow。寸喜代表火，</p>
+        <a href="https://olympics.com/zh/olympic-games/nagano-1998/mascot" target="_blank">了解更多</a>
+    </div>
+    <div class="card">
+        <div class="photo"><img src="./image/能城.jpg" alt=""></div>
+        <h1>Nokki 能城</h1>
+        <h2>第18届长野冬奥会</h2>
+        <p>雪地猫头鹰能城也称为Snowlets，名字对应其中的snow。能城代表空气。</p>
+        <a href="https://olympics.com/zh/olympic-games/nagano-1998/mascot"target="_blank">了解更多</a>
+    </div>
+    <div class="card">
+        <div class="photo"><img src="./image/家喜.jpg" alt=""></div>
+        <h1>Lekki 家喜</h1>
+        <h2>第18届长野冬奥会</h2>
+        <p>雪地猫头鹰家喜也称为Snowlets，名字对应其中的lets。家喜代表土。</p>
+        <a href="https://olympics.com/zh/olympic-games/nagano-1998/mascot"target="_blank">了解更多</a>
+    </div>
+    <div class="card">
+        <div class="photo"><img src="./image/都木.jpg" alt=""></div>
+        <h1>Tsukki 都木</h1>
+        <h2>第18届长野冬奥会</h2>
+        <p>雪地猫头鹰都木也称为Snowlets，名字对应其中的lets。都木代表水。</p>
+        <a href="https://olympics.com/zh/olympic-games/nagano-1998/mascot" target="_blank">了解更多</a>
+    </div>
+    <div class="card">
+        <div class="photo"><img src="./image/哈康.jpg" alt=""></div>
+        <h1>Haakon 哈康 </h1>
+        <h2>第17届利勒哈默尔冬奥会</h2>
+        <p>哈康名字的由来是曾任挪威国王的哈康四世，而克里斯汀来自当时的公主。</p>
+        <a href="https://olympics.com/zh/olympic-games/lillehammer-1994/mascot" target="_blank">了解更多</a>
+    </div>
+    <div class="card">
+        <div class="photo"><img src="./image/克里斯汀.jpg" alt=""></div>
+        <h1>Kristin 克里斯汀</h1>
+        <h2>第17届利勒哈默尔冬奥会</h2>
+        <p>哈康和克里斯汀是两个欢乐衣着中世纪服装，但充满现代观念的儿童形象。</p>
+        <a href="https://olympics.com/zh/olympic-games/lillehammer-1994/mascot" target="_blank">了解更多</a>
+    </div>
+    <div class="card">
+        <div class="photo"><img src="./image/魔法.jpg" alt=""></div>
+        <h1>Magique 魔法</h1>
+        <h2>第16届阿尔贝维尔冬奥会</h2>
+        <p>Magique是一个立体星星形状的小魔鬼造型，象征着梦想和想象力。</p>
+        <a href="https://olympics.com/zh/olympic-games/albertville-1992/mascot" target="_blank">了解更多</a>
+    </div>
+    <div class="card">
+        <div class="photo"><img src="./image/海迪2.0.jpg" alt=""></div>
+        <h1>Hidy 海迪</h1>
+        <h2>第15届卡尔加里冬奥会</h2>
+        <p>海迪是豪迪的妹妹，“Hidy”是“hi”的扩展,表达卡尔加里地区人民的热情好客。</p>
+        <a href="https://olympics.com/zh/olympic-games/calgary-1988/mascot" target="_blank">了解更多</a>
+    </div>
+    <div class="card">
+        <div class="photo"><img src="./image/豪迪2.0.jpg" alt=""></div>
+        <h1>Howdy 豪迪</h1>
+        <h2>第15届卡尔加里冬奥会</h2>
+        <p>“Howdy”是典型的西式问候语“How do you do”的缩写,表达卡尔加里地区人民的热情好客。</p>
+        <a href="https://olympics.com/zh/olympic-games/calgary-1988/mascot">了解更多</a>
+    </div>
+    <div class="card">
+        <div class="photo"><img src="./image/武科.jpg" alt=""></div>
+        <h1>Vučko 武科</h1>
+        <h2>第14届萨拉热窝</h2>
+        <p>武科通过或微笑、或惊恐、或严肃的丰富面部表情赋予狼更加友善的一面，象征着勇气、力量以及冬天。</p>
+        <a href="https://olympics.com/zh/olympic-games/sarajevo-1984/mascot" target="_blank">了解更多</a>
+    </div>
+    <div class="card">
+        <div class="photo"><img src="./image/罗尼.jpg" alt=""></div>
+        <h1>Roni 罗尼</h1>
+        <h2>第13届普莱西德湖冬奥会</h2>
+        <p>浣熊的面部特征和眼睛周围的黑色设计是致敬戴太阳镜和帽子参加冬季运动的选手们。</p>
+        <a href="https://olympics.com/zh/olympic-games/lake-placid-1980/mascot" target="_blank">了解更多</a>
+    </div>
+    <div class="card">
+        <div class="photo"><img src="./image/雪人.jpg" alt=""></div>
+        <h1>Schneemandl 雪人</h1>
+        <h2>第12届因斯布鲁克冬奥会</h2>
+        <p>圆滚滚的雪人，戴着泰洛尔人帽子，加上胡萝葡红红的鼻子，造型非常讨人喜欢；象征着纯洁的奥运会。</p>
+        <a href="https://olympics.com/zh/olympic-games/innsbruck-1976/mascot" target="_blank">了解更多</a>
+    </div>
+    <div class="card">
+        <div class="photo"><img src="./image/雪士2.0.jpg" alt=""></div>
+        <h1>Schuss 雪士</h1>
+        <h2>第10届格勒诺布尔冬奥会</h2>
+        <p>Schuss有着半人半物的卡通形象，像一个意志坚强的小精灵，开创整个奥林匹克吉祥物的先河。</p>
+        <a href="https://olympics.com/zh/olympic-games/grenoble-1968/mascot" target="_blank">了解更多</a>
+    </div>
+</body>
+
+</html>

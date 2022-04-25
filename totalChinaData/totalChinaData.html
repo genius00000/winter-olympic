@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国概览</title>
+    <!--字体链接-->
+    <link href='http://cdn.repository.webfont.com/webfonts/nomal/148321/45803/623c1c97f629d80e38547625.css' rel='stylesheet' type='text/css' />
+    <link rel='stylesheet' type='text/css' href="../css/dataStyle.css" />
+</head>
+<body>
+    
+    <div class="daohang">
+        <ul>
+            <li><a href="../首页/index.html">首页</a></li>
+            <li><a href="../items/item.html">项目展览馆</a></li>
+            <li>
+                <a>数据统计馆</a>
+                    <ul class="nav1">
+                        <li style="padding-top:5px;"><a href="../大屏/analysis.html">热点概览</a></li>
+                        <li style="padding-top:5px;"><a href="../totalWorldData/totalWorldData.html">世界概览</a></li>
+                        <li style="padding-top:5px;"><a href="../timeData/worldMap.html">地图时间轴</a></li>
+                        <li style="padding-top:5px;"><a href="../totalChinaData/totalChinaData.html">中国概览</a></li>
+                    </ul>
+            </li>
+            <li>
+                <a>冬奥文化馆</a>
+                <ul class="nav2">
+                    <li style="padding-top:5px;"><a href="../WorldCulture/extrance.html">世界文化馆</a></li>
+                    <li style="padding-top:5px;"><a href="../ChinaCulture/chinaCulture1.html">中国文化馆</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <h1 style="font-family:'LiDeBiao-Xing32e5ff8f60324361';font-size: 2.5em;color:white;padding-left: 1rem;padding-top: 0.25rem;">
+        冬奥会展览馆    
+    </h1>
+    <div class="totalpeople">
+        <iframe src="./echarts/chinaTotalpeople.html" style="width:100%;height:100%;" frameBorder="0"></iframe>
+        <iframe class="WomanMan" src="./echarts/chinaTotalJiangpai.html" style="width:100%;height:100%;" frameBorder="0"></iframe>
+    </div>
+    <div class="jiangpai">
+        <iframe src="./echarts/2022Jiangpai.html" style="width:45rem;height:100%;" frameBorder="0"></iframe>
+    </div>
+</body>
+</html>

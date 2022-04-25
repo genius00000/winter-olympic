@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冬奥展览馆首页</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 200vh;
+            overflow-x: hidden;
+        }
+
+        .background {
+            background-image: url("mountain\ range.jpg");
+            background-size: cover;
+            background-position: 50% 50%;
+            height: 145vh;
+            font: 850 32rem '';
+            line-height: 130vh;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+        }
+        .background::before {
+            content: '';
+            background-size: cover;
+            background-image: inherit;
+            background-position: 50% 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: -99;
+        }
+        .entrance {
+            /* background:linear-gradient(to bottom,#1e2325,transparent); */
+            background-color: #1e2325;
+            height: 55vh;
+        }
+        .entrance .bu{
+            width: 100%;
+            height: 55px;
+            position: absolute;
+            bottom: -85vh;
+            display: inline-block;
+        }
+        .entrance .bu button{
+            border-radius: 25px;
+            width: 180px;
+            height: 55px;
+            border: 0px;
+            font-family: sans-serif;
+            font-size: 18px;
+            background:linear-gradient(to right,#57e8d7,#1caede,#57e8d7) ;
+            background-size: 200%;
+            /* color: rgb(101, 99, 99); */
+            color: rgb(245, 245, 245);
+            font-weight: 600;
+
+        }
+        button:hover {
+            background-color: #37c5c5; /* Green */
+            color: white;
+            cursor:pointer;
+            background-position-x:100% ;
+            transform: translateY(-5px);
+        }
+        h1 {
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            letter-spacing: 10px;
+            color: #fff;
+            font-size:98px ;
+        }
+
+        h2 {
+            position: absolute;
+            letter-spacing: 2px;
+            font-size:98px ;
+            top: 115vh;
+            width: 90%;
+            color: #fff;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 30px;
+            /* background-color: rgba(0, 0, 0, .3); */
+            z-index: 999;
+        }
+        h3 {
+            position: absolute;
+            letter-spacing: 2px;
+            top: 145vh;
+            width: 90%;
+            color: #fff;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 30px;
+            /* background-color: rgba(0, 0, 0, .3); */
+            z-index: 999;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="top:-60px;">冬奥会展览馆</h1>
+    <div class="background"><span>冬奥</span></div>
+    <div style="position: absolute;width: 1000px;background-color: rgba(0, 0, 0, .3);z-index: 9999;top:0vh;margin-left: 15%;">
+        <h2>冬奥会展览馆</h2>
+        <h3>2022北京冬奥会，是由中国举办的国际性奥林匹克赛事，于2022年2月4日开幕，2月20日闭幕。本届冬奥会引起了中国人民以及全球人民的极大关注。冬奥会给了中国向世界展现经济、文化、科技、体育、人文等的机会，彰显了中华文化的博大精深，进一步促进了中国与世界人民的融合发展，推动了中国向世界强国迈进的步伐。同时本届冬奥会的举办也大大促进了中国冰雪运动的发展。
+            本网站将以可视化的形式，让您直观地了解冬奥会中的各类项目、历届冬奥会的举办情况以及冬奥会中彰显出的各国文化，为推动冰雪运动的发展贡献自己的力量。
+        </h3>
+    </div>
+    <div class="entrance">
+        <div class="bu">
+            <button style="margin-left: 18%;" onclick="window.location.href = '../items/item.html'" target="_blank">项目展览馆</button>
+            <button style="margin-left: 11%;" onclick="window.location.href = '../totalWorldData/totalWorldData.html'" target="_blank">数据统计馆</button>
+            <button style="margin-left: 11%;" onclick="window.location.href = '../WorldCulture/extrance.html'" target="_blank">文化展览馆</button>
+        </div>
+
+    </div>
+
+  
+    <script>
+        const background = document.querySelector(".background")
+
+        document.addEventListener('scroll', () => {
+            const scrollY = window.scrollY
+
+            if (scrollY !== 0) {
+                background.style.backgroundPosition = `calc(50% + ${scrollY}px) calc(50% + ${scrollY}px)`
+            }else{
+                background.style.backgroundPosition = ''
+            }
+        })
+    </script>
+</body>
+
+</html>

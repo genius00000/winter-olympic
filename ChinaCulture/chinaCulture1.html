@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国文化馆</title>
+    <!--字体链接-->
+    <link href='http://cdn.repository.webfont.com/webfonts/nomal/148321/45803/623c1c97f629d80e38547625.css' rel='stylesheet' type='text/css' />
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(#1d2b48,#4f4266);
+        }
+
+        ul{
+            list-style: none;
+            padding-top:9px;
+        }
+        ul li{
+            float:left;
+            width:100px;
+            height:20px;
+            
+        }
+        ul ul{
+            visibility:hidden;
+            position:absolute;
+        }
+        ul li:hover ul{
+            z-index:99999;
+            visibility:visible;
+            width:100px;
+            border-bottom-left-radius:10px;
+            border-bottom-right-radius:10px;
+            background-color:#193670;
+            color:white;    
+        }
+        ul li:hover .nav1{
+            height:105px;
+        }
+        ul li:hover .nav2{
+            height:60px;
+        }
+        a{
+            color:white;
+            text-decoration: none;
+        }
+        .daohang{
+            /*border:1px solid #000;*/
+            width:430px;
+            height:40px;
+            float:right;
+            text-align: center;
+            background-color:#193670;
+            border-bottom-left-radius:10px;
+        }
+
+
+        .left{
+            /*border:1px solid black;*/
+            width:21%;
+            margin-left:21%;
+            height:420px;
+            float:left;
+            margin-top:110px;
+        }
+        .center{
+            /*border:1px solid black;*/
+            width:17%;
+            margin-left:1%;
+            height:420px;
+            float:left;
+            margin-top:110px;
+        }
+        .right{
+            /*border:1px solid black;*/
+            width:18%;
+            margin-right:21%;
+            margin-top:10px;
+            height:420px;
+            float:right;
+            margin-top:110px;
+        }
+        .left #leftTop{
+            /*border:1px solid black;*/
+            width:100%;
+            border-radius:10px;
+            position:relative;
+            opacity: 0.9;
+            overflow:hidden;
+            height:243px;
+        }
+        .left #leftBottom{
+            /*border:1px solid black;*/
+            width:100%;
+            border-radius:10px;
+            opacity: 0.9;
+            /**/overflow:hidden;
+            position: relative;
+            margin-top:8px;
+            height:177px;
+        }
+        .center #center-top{
+            /*border:1px solid black;*/
+            width:100%;
+            border-radius:10px;
+            position:relative;
+            opacity: 0.9;
+            overflow:hidden;
+            height:180px;
+        }
+        .center #center-center{
+            /*border:1px solid black;*/
+            width:100%;
+            border-radius:10px;
+            position:relative;
+            margin-top:8px;
+            opacity: 0.9;
+            overflow:hidden;
+            height:116px;
+        }
+        .center #center-bottom{
+            /*border:1px solid black;*/
+            width:100%;
+            border-radius:10px;
+            position:relative;
+            opacity: 0.9;
+            overflow:hidden;
+            margin-top:8px;
+            height:116px;
+        }
+        .right #right1{
+            /*border:1px solid black;*/
+            width:46%;
+            border-radius:10px;
+            position:relative;
+            opacity: 0.9;
+            overflow:hidden;
+            float:left;
+            height:270px;
+        }
+        .right #right2{
+            /*border:1px solid black;*/
+            width:50%;
+            border-radius:10px;
+            position:relative;
+            opacity: 0.9;
+            overflow:hidden;
+            float:right;
+            height:270px;
+        }
+        .right #right3{
+            /*border:1px solid black;*/
+            width:48%;
+            border-radius:10px;
+            /*margin-left:2%;*/
+            position:relative;
+            margin-top:10px;
+            opacity: 0.9;
+            overflow:hidden;
+            float:left;
+            height:150px;
+        }
+        .right #right4{
+            /*border:1px solid black;*/
+            width:48%;
+            border-radius:10px;
+            /*margin-left:2%;*/
+            position:relative;
+            margin-top:10px;
+            overflow:hidden;
+            float:left;
+            float:right;
+            height:150px;
+        }
+        img{
+            /* 设置过渡 */
+            transition: 0.35s;
+        }
+        .text{
+            position: absolute;
+            /**/top: 30px;
+            left: 30px;
+            bottom: 30px;
+            right: 30px;
+            padding: 0 18px;
+        }
+        .text::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 100%;
+            border-left: 4px solid rgba(255,255,255,0.8);
+            background-color: rgba(255,255,255,0.5);
+            opacity: 0;
+            /* 过渡 */
+            transition: 0.5s;
+            /* 过渡延迟时间 */
+            transition-delay: 0.6s;
+        }
+        .text h2,.text h3{
+            margin-top: 20px;
+            opacity: 0;
+            transition: 0.35s;
+            font-weight: 800;
+            text-transform: uppercase;
+            transform: translate(30%,0%);
+            transition-delay: 0.3s;
+            color:white;
+        }
+        /* 悬停样式开始 */
+        .card:hover img{
+            opacity: 0.3;
+        }
+        .card:hover .text h2{
+            opacity: 1;
+            transform: translate(0%,0%);
+            transition-delay: 0.4s;
+        }
+        .card:hover .text h3{
+            opacity: 0.9;
+            transform: translate(0%,0%);
+            transition-delay: 0.6s;
+        }
+        .card:hover .text::before{
+            background-color: rgba(255,255,255,0);
+            left: 0;
+            opacity: 1;
+            transition-delay: 0s;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="daohang">
+        <ul>
+            <li><a href="../首页/index.html">首页</a></li>
+            <li><a href="../items/item.html">项目展览馆</a></li>
+            <li>
+                <a>数据统计馆</a>
+                    <ul class="nav1">
+                        <li style="padding-top:5px;"><a href="../大屏/analysis.html">热点概览</a></li>
+                        <li style="padding-top:5px;"><a href="../totalWorldData/totalWorldData.html">世界概览</a></li>
+                        <li style="padding-top:5px;"><a href="../timeData/worldMap.html">地图时间轴</a></li>
+                        <li style="padding-top:5px;"><a href="../totalChinaData/totalChinaData.html">中国概览</a></li>
+                    </ul>
+            </li>
+            <li>
+                <a>冬奥文化馆</a>
+                <ul class="nav2">
+                    <li style="padding-top:5px;"><a href="../WorldCulture/extrance.html">世界文化馆</a></li>
+                    <li style="padding-top:5px;"><a href="../ChinaCulture/chinaCulture1.html">中国文化馆</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <h1 style="font-family:'LiDeBiao-Xing32e5ff8f60324361';font-size: 2.5em;color:white;padding-left: 1rem;padding-top: 0.25rem;">
+        冬奥会展览馆    
+    </h1>
+    <div class="left">
+        <div id="leftTop" class="card">
+            <a href="1.html">
+                <img  src="./页面元素/冰墩墩3.png" style="width:360px;margin-left:-12px;"/>
+                <div class="text">
+                    <h2>2022北京冬奥会</h2>
+                    <h3>吉祥物</h3>
+                </div>
+            </a>
+            
+        </div>
+        <div id="leftBottom" class="card">
+            <a href="2.html">
+                <img  src="./页面元素/奖牌3.jpg" style="width:330px;margin-top:-6px;"/>
+                <div class="text">
+                    <h2>2022北京冬奥会</h2>
+                    <h3>奖牌</h3>
+                </div>
+            </a>
+            
+        </div>
+    </div>
+    <div class="center">
+        <div id="center-top" class="card">
+            <a href="changguan.html">
+                <img  src="./页面元素/场馆4.png" style="width:324px;height:180px;"/>
+                <div class="text" >
+                    <h2 style="font-size:22px;">2022北京冬奥会</h2>
+                    <h3>比赛场馆</h3>
+                </div>
+            </a>
+            
+        </div>
+        <div id="center-center" class="card">
+            <a href="4.html">
+                <img  src="./页面元素/开幕式3.jpg" style="width:260px;height:150px;margin-top:-18px;"/>
+                <div class="text" style="top:25px;">
+                    <h2 style="font-size:22px;margin-top:-5px;">2022北京冬奥会</h2>
+                    <h3>开幕式</h3>
+                </div>
+            </a>
+            
+        </div>
+        <div id="center-bottom" class="card">
+            <a href="bimushi.html">
+                <img  src="./页面元素/闭幕式2.jpg" style="width:260px;height:170px;margin-top:-48px;"/>
+                <div class="text" style="top:25px;">
+                    <h2  style="font-size:22px;margin-top:-5px;">2022北京冬奥会</h2>
+                    <h3>闭幕式</h3>
+                </div>
+            </a>
+            
+        </div>
+    </div>
+    <div class="right"> 
+        <div id="right1" class="card">
+            <a href="6.html">
+                <img  src="./页面元素/火炬2.jpg" style="width:180px;margin-left:-24px;"/>
+                <div class="text" style="width:60px;">
+                    <h2 style="font-size:20px;">2022</br>北京</br>冬奥会</h2>
+                    <h3>火炬</h3>
+                </div>
+            </a>
+        </div>
+        <div id="right2" class="card">
+            <a href="7.html">
+                <img  src="./页面元素/服装3.jpg" style="width:492px;margin-left:-162px;margin-top:-12px;"/>
+                <div class="text" style="width:60px;">
+                    <h2 style="font-size:20px;">2022</br>北京</br>冬奥会</h2>
+                    <h3>服装</h3>
+                </div>
+            </a>
+        </div>
+        <div id="right3" class="card">
+            <a href="8.html">
+                <img  src="./页面元素/冬奥会会徽.jpg" style="width:264px;margin-left:-60px;margin-top:-36px;"/>
+                <div class="text" style="width:60px;">
+                    <h2 style="font-size:15px;margin-top:-2px;">2022</br>北京</br>冬奥会</h2>
+                    <h3 style="font-size:13px;">会徽</h3>
+                </div>
+            </a>
+            
+        </div>
+        <div id="right4" class="card">
+            <a href="9.html">
+                <img  src="./页面元素/花束2.jpg" style="width:240px;margin-left:-36px;"/>
+                <div class="text" style="width:60px;">
+                    <h2 style="font-size:15px;margin-top:-2px;">2022</br>北京</br>冬奥会</h2>
+                    <h3 style="font-size:13px;">颁奖花束</h3>
+                </div>
+            </a>
+            
+        </div>
+    </div>
+</body>
+</html>

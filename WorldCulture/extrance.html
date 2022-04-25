@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <!--字体链接-->
+    <link href='http://cdn.repository.webfont.com/webfonts/nomal/148321/45803/623c1c97f629d80e38547625.css' rel='stylesheet' type='text/css' />
+    <title>文化展览馆</title>
+    <!-- <link rel="stylesheet" href="../css/98.css"> -->
+    <style>
+        *{
+            /* 初始化 */
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            /* 100%窗口高度 */
+            min-height: 100vh;
+            /* 弹性布局 水平+垂直居中 */
+            /* display: flex; */
+            justify-content: center;
+            align-items: center;
+            background-color: #758a99;
+        }
+
+        ul{
+            list-style: none;
+            padding-top:9px;
+        }
+        ul li{
+            float:left;
+            width:100px;
+            height:20px;
+            
+        }
+        ul ul{
+            visibility:hidden;
+            position:absolute;
+        }
+        ul li:hover ul{
+            z-index:99999;
+            visibility:visible;
+            width:100px;
+            border-bottom-left-radius:10px;
+            border-bottom-right-radius:10px;
+            background-color:#4a799b;
+            color:white;    
+        }
+        ul li:hover .nav1{
+            height:105px;
+        }
+        ul li:hover .nav2{
+            height:60px;
+        }
+        a{
+            color:white;
+            text-decoration: none;
+        }
+        .daohang{
+            /*border:1px solid #000;*/
+            width:430px;
+            height:40px;
+            float:right;
+            text-align: center;
+            background-color:#4a799b;
+            border-bottom-left-radius:10px;
+        }
+
+        .container{
+            display: flex;
+            margin-left:11%;
+            margin-top:120px;
+        }
+        .container .box{
+            /* 相对定位 */
+            position: relative;
+            /* 弹性布局 水平居中 */
+            display: flex;
+            justify-content: center;
+            width: 320px;
+            height: 400px;
+            /* 自定义属性, 可通过var函数对其调用 */
+            --c1: #09BB8B;
+            --c2: #ecb8b1;
+            --c3: #4A82E3;
+            /* 条纹背景 */
+            background: linear-gradient(45deg,var(--c1) 25%,#444 25%,#444 50%,var(--c1) 50%,var(--c1) 75%,#444 75%,#444 100%);
+            background-size: 40px 40px;
+            border-radius: 20px;
+            margin: 0 40px;
+            /* 灰度滤镜 */
+            /* filter: grayscale(1); */
+            /* 设置灰度滤镜的过渡时间为1秒 */
+            transition: filter 1s;
+            /* 执行动画: 动画名 时长 线性的 无限次播放 */
+            animation: animateBg 0.5s linear infinite;
+            /* 默认动画状态为暂停 */
+            animation-play-state: paused;
+        }
+        /* 改变第二个卡片的背景条纹颜色 */
+        .container .box:nth-child(2){
+            background: linear-gradient(135deg,var(--c2) 25%,#444 25%,#444 50%,var(--c2) 50%,var(--c2) 75%,#444 75%,#444 100%);
+            background-size: 40px 40px;
+        }
+        .container .box:nth-child(3){
+            background: linear-gradient(135deg,var(--c3) 25%,#444 25%,#444 50%,var(--c3) 50%,var(--c3) 75%,#444 75%,#444 100%);
+            background-size: 40px 40px;
+        }
+        .container .box  img{
+            height: 90%;
+            /* 绝对定位 */
+            position: absolute;
+            bottom: 18%;
+            left: 10%;
+            /* 设置过渡 */
+            transition: 0.5s;
+        }
+        .container .box p{
+            height: 40px;
+            width: 150px;
+            text-align: center;
+            line-height: 40px;
+            /* 绝对定位 */
+            position: absolute;
+            bottom:18px;
+            background-color: aliceblue;
+            border-radius: 15px;
+            font-size: 24px;
+            font-weight: 600;
+            /* 设置过渡 */
+            transition: 0.5s;
+        }
+        .container .box:hover img{
+            /* 鼠标移入, 图片变大 */
+            height: 480px;
+            left: 10%;
+        }
+        .container .box:hover{
+            /* 鼠标移入, 灰度无效, 动画播放 */
+            /* filter: grayscale(0); */
+            animation-play-state: running;
+        }
+        /* 定义动画 */
+        @keyframes animateBg {
+            0%{
+                background-position: 0;
+            }
+            100%{
+                background-position: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="daohang">
+        <ul>
+            <li><a href="../首页/index.html">首页</a></li>
+            <li><a href="../items/item.html">项目展览馆</a></li>
+            <li>
+                <a>数据统计馆</a>
+                    <ul class="nav1">
+                        <li style="padding-top:5px;"><a href="../大屏/analysis.html">热点概览</a></li>
+                        <li style="padding-top:5px;"><a href="../totalWorldData/totalWorldData.html">世界概览</a></li>
+                        <li style="padding-top:5px;"><a href="../timeData/worldMap.html">地图时间轴</a></li>
+                        <li style="padding-top:5px;"><a href="../totalChinaData/totalChinaData.html">中国概览</a></li>
+                    </ul>
+            </li>
+            <li>
+                <a>冬奥文化馆</a>
+                <ul class="nav2">
+                    <li style="padding-top:5px;"><a href="../WorldCulture/extrance.html">世界文化馆</a></li>
+                    <li style="padding-top:5px;"><a href="../ChinaCulture/chinaCulture1.html">中国文化馆</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <h1 style="font-family:'LiDeBiao-Xing32e5ff8f60324361';font-size: 2.5em;color:white;padding-left: 1rem;padding-top: 0.25rem;">
+        冬奥会展览馆
+    </h1>
+    <div class="container">
+        <div class="box">
+            <a href="./torch.html">
+                <img src="./image/huoju.png" alt="">
+            </a>
+            <p>火炬陈列馆</p>
+        </div>
+        <div class="box">
+            <a href="./mascot.html">
+                <img src="./image/mactor.png" alt="">
+            </a>
+            <p style="width: 170px;">吉祥物名人堂</p>
+        </div>
+        <div class="box">
+            <a href="./prize.html">
+                <img src="./image/prize.png" alt="">
+            </a>
+            <p>奖牌收藏盒</p>
+        </div>
+    </div>
+</body>
+
+</html>

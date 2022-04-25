@@ -1,0 +1,144 @@
+<!--
+    THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/zh/editor.html?c=bar-negative
+-->
+<!DOCTYPE html>
+<html style="height: 100%">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body style="height: 100%; margin: 0">
+        <div id="container" style="height: 100%"></div>
+
+        
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script>
+        <!-- Uncomment this line if you want to dataTool extension
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/extension/dataTool.min.js"></script>
+        -->
+        <!-- Uncomment this line if you want to use gl extension
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+        -->
+        <!-- Uncomment this line if you want to echarts-stat extension
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+        -->
+        <!-- Uncomment this line if you want to use map
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/map/js/china.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/map/js/world.js"></script>
+        -->
+        <!-- Uncomment these two lines if you want to use bmap extension
+        <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=<Your Key Here>"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@{{version}}/dist/extension/bmap.min.js"></script>
+        -->
+
+        <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+
+var option;
+
+
+
+option = {
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'shadow'
+    },
+    formatter: (params) => {
+      if (!params.length) return ''
+      let s = params[0].axisValueLabel + '<br/>'
+      for (const iterator of params) {
+       // 如果是负数则反转
+        let d = iterator.data < 0 ? -iterator.data : iterator.data
+        s += iterator.marker + iterator.seriesName + '：' + d + '<br/>'
+      }
+      return s
+    }
+
+
+  },
+  legend: {
+    data: [ '男生', '女生']
+  },
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  xAxis: [
+  {
+	type: 'value',
+    axisLabel: {
+
+        show: true,
+        textStyle: {
+            color: '#fff'
+        },
+   	  formatter: (value) => {
+	    // 负数取反 显示的就是正数了
+   	    if (value < 0) return -value
+        else return value
+   	  }
+    }
+  }
+]
+,
+  yAxis: [
+    {
+      type: 'category',
+      axisTick: {
+        show: false
+      },
+      axisLabel: {
+        show: true,
+        textStyle: {
+            color: '#fff'
+        },
+      },
+      data: ['花样滑冰', '冰球      ', '短道速滑', '冰壶      ', '速度滑冰']
+    }
+  ],
+  series: [
+    {
+      name: '男生',
+      type: 'bar',
+      color:'#fac858',
+      stack: 'Total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [67.11, 61.2, 73.05, 54.36, 64.26]
+    },
+    {
+      name: '女生',
+      type: 'bar',
+      color:'#91cc75',
+      stack: 'Total',
+      label: {
+        formatter: (value) => {
+          // 值都是负数的 所以需要取反一下
+          return -value.data 
+       },
+        show: true,
+        position: 'left'
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [-32.89, -38.8,-26.95, -45.64, -35.74]
+    }
+  ]
+};
+
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
+}
+
+        </script>
+    </body>
+</html>
+    
